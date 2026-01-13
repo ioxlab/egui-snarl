@@ -352,4 +352,14 @@ pub trait SnarlViewer<T> {
     fn current_transform(&mut self, to_global: &mut TSTransform, snarl: &mut Snarl<T>) {
         let _ = (to_global, snarl);
     }
+
+    /// Checks if the node is hidden.
+    /// Hidden nodes will not be drawn.
+    ///
+    /// This method is called for each node in the snarl, when drawing the snarl.
+    #[inline]
+    #[allow(unused_variables)]
+    fn is_node_hidden(&mut self, node: NodeId, snarl: &mut Snarl<T>) -> bool {
+        false
+    }
 }

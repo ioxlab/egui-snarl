@@ -1078,6 +1078,10 @@ where
             continue;
         }
 
+        if viewer.is_node_hidden(node_idx, snarl) {
+            continue;
+        }
+
         // show_node(node_idx);
         let response = draw_node(
             snarl,
